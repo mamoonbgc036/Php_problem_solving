@@ -11,3 +11,7 @@ function PickingNumber($a){
 
     return $max;
 }
+
+$a = [1, 2, 2, 3, 1, 2];
+
+PickingNumber($a);
