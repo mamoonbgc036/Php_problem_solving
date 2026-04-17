@@ -1,15 +1,19 @@
 <?php 
 
 function removeDuplicate($array){
-    $result[] = $array[0];
+    $uniqueArray = [];
     foreach($array as $arr){
-        foreach($result as $key => $res){
-            if($res != $arr){
-                $result[] = $arr;
+        $found = false;
+        foreach($uniqueArray as $key => $res){
+            if($res == $arr){
+                $found = true;
             }
         }
+        if(!$found){
+            $uniqueArray[] = $arr;
+        }
     }
-    return $result;
+    return $uniqueArray;
 }
 $ranked = [100, 100, 50, 40, 40, 20, 10];
 print_r(removeDuplicate($ranked));
